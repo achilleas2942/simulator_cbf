@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN rm /root/catkin_ws/src/rotors_simulator/rotors_description/urdf/pelican.xacro
 COPY ./pelican.xacro /root/catkin_ws/src/rotors_simulator/rotors_description/urdf/pelican.xacro 
+COPY ./hummingbird.xacro /root/catkin_ws/src/rotors_simulator/rotors_description/urdf/hummingbird.xacro
 
 # Create an entrypoint script to pull the latest updates and build the workspace
 COPY entrypoint.sh /root/entrypoint.sh
