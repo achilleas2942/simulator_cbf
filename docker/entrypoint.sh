@@ -29,7 +29,7 @@ chmod +x launch_robots.sh
 
 roscd turtlebot3_description/urdf
 mv turtlebot3_waffle_pi.urdf.xacro test.urdf.xacro
-cp /root/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/urdf/turtlebot3_waffle_pi.urdf.xacro . 
+cp /root/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/urdf/turtlebot3_waffle_pi.urdf.xacro .
 
 # Export ROS_MASTER_URI and ROS_IP
 export ROS_MASTER_URI=http://"$ROS_MASTER_IP":11311
