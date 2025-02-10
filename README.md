@@ -4,7 +4,7 @@
 
 ### 1. Preparation Checklist
 - Install Docker Engine
-    - Install Docker on Ubuntu: [Docker installation guide for Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+    - Install docker on Ubuntu: [docker installation guide for Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
     - Check docker is properly setup on laptop: open a terminal and run
       ```
       docker run hello-world
@@ -16,12 +16,12 @@
   ```
 
 ### 3. Run the simulator
-#### Option 1 - Build Docker image locally and run docker container using the create and run bash script files
+#### Option 1 - Build docker image locally and run docker container using the create and run bash script files
   - Go to the docker directory
     ```
     cd simulator_cbf/docker/
     ```
-  - Run the bash script file to create the Docker image
+  - Run the bash script file to create the docker image
     ```
     ./create_image.sh
     ```
@@ -38,7 +38,7 @@
         ./run_container.sh
         ```
 
-#### Option 2 - Pull Docker image locally and run docker container using docker pull and the run bash script file
+#### Option 2 - Pull docker image locally and run docker container using docker pull and the run bash script file
   - Pull the docker image from the [simulator](https://github.com/achilleas2942/simulator_cbf/pkgs/container/multiple_turtles_and_pelicans_simulator) GitHub packages
     ```
     docker pull ghcr.io/achilleas2942/multiple_turtles_and_pelicans_simulator:latest
