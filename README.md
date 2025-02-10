@@ -77,7 +77,7 @@
         ./run_container.sh
         ```
 
-*If you do not specify the parameters robots, ros_master_uri, and ros_ip, then the following default values will be selcted:
-- robots 4
-- ros_master_uri $(hostname -I | awk '{print $1}')
-- ros_ip $(hostname -I | awk '{print $1}')*
+*If you do not specify the parameters robots, ros_master_uri, and ros_ip, then the following default values will be selcted:*
+*- robots 4*
+*- ros_master_uri $(hostname -I | awk '{print $1}')*
+*- ros_ip $(hostname -I | awk '{print $1}')*
