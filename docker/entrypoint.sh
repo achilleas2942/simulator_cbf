@@ -3,6 +3,11 @@
 # Source the ROS setup
 source /opt/ros/noetic/setup.bash
 
+# Set the parameter
+NUM_ROBOTS=${1:-4}
+ROS_MASTER_IP=${2:-130.240.96.104}
+ROS_IP=${3:-130.240.96.104}
+
 # Pull the latest updates from the repositories
 cd /root/catkin_ws/src
 if [ -d "turtlebot3_simulations" ]; then
@@ -22,17 +27,19 @@ source /root/catkin_ws/devel/setup.bash
 roscd turtlebot3_gazebo/launch
 chmod +x launch_robots.sh
 
-# Export ROS_MASTER_URI
-# export ROS_MASTER_URI=http://130.240.96.104:11311
+roscd turtlebot3_description/urdf
+mv turtlebot3_waffle_pi.urdf.xacro test.urdf.xacro
+cp /root/catkin_ws/src/turtlebot3_simulations/turtlebot3_gazebo/urdf/turtlebot3_waffle_pi.urdf.xacro . 
 
-# Automatically detect and export the host IP for ROS_IP
-export ROS_IP=$(ip route | grep default | awk '{print $3}')
+# Export ROS_MASTER_URI and ROS_IP
+export ROS_MASTER_URI=http://"$ROS_MASTER_IP":11311
+export ROS_IP="$ROS_IP"
 
 # pass gazebo args
 export TURTLEBOT3_MODEL=waffle_pi
 
 # Execute the provided command
 roscd turtlebot3_gazebo/launch
-./launch_robots.sh  "$1"
+./launch_robots.sh  "$NUM_ROBOTS"
 
 roslaunch turtlebot3_gazebo sim_launch.launch
