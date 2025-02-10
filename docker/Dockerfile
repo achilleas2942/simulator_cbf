@@ -31,4 +31,4 @@ RUN echo "source /root/catkin_ws/devel/setup.bash" >> ~/.bashrc
 ENTRYPOINT ["/root/entrypoint.sh"]
 
 # Default command
-CMD ["4"]
+CMD ["4", "130.240.96.104", "130.240.96.104"]
