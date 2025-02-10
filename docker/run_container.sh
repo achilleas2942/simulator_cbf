@@ -19,16 +19,16 @@ while [[ $# -gt 0 ]]; do
 done
 
 # Display warnings if default values are used
-if [[ -z "$1" ]]; then
-    echo "WARNING: Number of robots not specified. Using default: $NUM_ROBOTS"
+if [[ "$NUM_ROBOTS" == "4" ]]; then
+    echo "⚠️  WARNING: Using default: $NUM_ROBOTS"
 fi
 
-if [[ -z "$2" ]]; then
-    echo "WARNING: ROS_MASTER_IP not specified. Using default: $ROS_MASTER_IP"
+if [[ "$ROS_MASTER_IP" == "$ROS_IP" && "$ROS_MASTER_IP" == "$(hostname -I | awk '{print $1}')" ]]; then
+    echo "⚠️  WARNING: Using default: $ROS_MASTER_IP"
 fi
 
-if [[ -z "$3" ]]; then
-    echo "WARNING: ROS_IP not specified. Using default: $ROS_IP"
+if [[ "$ROS_IP" == "$ROS_MASTER_IP" ]]; then
+    echo "⚠️  WARNING: Using default: $ROS_IP"
 fi
 
 # Run the Docker container with the appropriate environment variables
