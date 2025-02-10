@@ -5,8 +5,8 @@ source /opt/ros/noetic/setup.bash
 
 # Set the parameter
 NUM_ROBOTS=${1:-4}
-ROS_MASTER_IP=${2:-130.240.96.104}
-ROS_IP=${3:-130.240.96.104}
+ROS_MASTER_IP=${2:-$(hostname -I | awk '{print $1}')}
+ROS_IP=${3:-$ROS_MASTER_IP}
 
 # Pull the latest updates from the repositories
 cd /root/catkin_ws/src
