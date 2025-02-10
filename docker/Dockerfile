@@ -30,5 +30,5 @@ RUN echo "source /root/catkin_ws/devel/setup.bash" >> ~/.bashrc
 # Set the entrypoint
 ENTRYPOINT ["/root/entrypoint.sh"]
 
-# Default command
-CMD ["4", "130.240.96.104", "130.240.96.104"]
+# Default command: Provides default values if not overridden
+CMD ["4", "$(hostname -I | awk '{print $1}')", "$(hostname -I | awk '{print $1}')"]
