@@ -18,8 +18,12 @@ catkin_make
 # Source the workspace
 source /root/catkin_ws/devel/setup.bash
 
+# Make the launch script executable
+roscd turtlebot3_gazebo/launch
+chmod +x launch_robots.sh
+
 # Export ROS_MASTER_URI
-export ROS_MASTER_URI=http://130.240.96.104:11311
+# export ROS_MASTER_URI=http://130.240.96.104:11311
 
 # Automatically detect and export the host IP for ROS_IP
 export ROS_IP=$(ip route | grep default | awk '{print $3}')
@@ -28,7 +32,7 @@ export ROS_IP=$(ip route | grep default | awk '{print $3}')
 export TURTLEBOT3_MODEL=waffle_pi
 
 # Execute the provided command
-# roslaunch turtlebot3_gazebo multiple_turtles_and_pelicans.launch
+roscd turtlebot3_gazebo/launch
+./launch_robots.sh  "$1"
 
-# Execute the provided command
-exec "$@"
+roslaunch turtlebot3_gazebo sim_launch.launch
