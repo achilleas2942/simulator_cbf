@@ -59,7 +59,7 @@
         ```
         ./run_container.sh
         ```
-#### Option 2 - Run directly docker container using the run bash script file
+#### Option 3 - Run directly docker container using the run bash script file
   - Go to the docker directory
     ```
     cd simulator_cbf/docker/
@@ -77,7 +77,7 @@
         ./run_container.sh
         ```
 
-* If you do not specify the parameters robots, ros_master_uri, and ros_ip, then the following default values will be selcted:
+*If you do not specify the parameters robots, ros_master_uri, and ros_ip, then the following default values will be selcted:
 - robots 4
 - ros_master_uri $(hostname -I | awk '{print $1}')
-- ros_ip $(hostname -I | awk '{print $1}')
+- ros_ip $(hostname -I | awk '{print $1}')*
