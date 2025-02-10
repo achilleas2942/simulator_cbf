@@ -22,6 +22,14 @@
   ```
   ./run_container.sh robots <specify_the_number_of_robot_pairs> ros_master_uri <specify_the_ros_master_uri_ip> ros_ip <specify_the_ros_ip>
   ```
+  e.g.
+  - ```
+    ./run_container.sh robots 2 ros_master_uri 127.0.0.1 ros_ip 127.0.0.1
+    ```
+  - or
+    ```
+    ./run_container.sh
+    ```
 
 If you do not specify the parameters robots, ros_master_uri, and ros_ip, then the following default values will be selcted:
 - robots 4
