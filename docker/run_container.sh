@@ -9,7 +9,7 @@ ROS_IP="130.240.96.104"
 # Parse command-line arguments
 while [[ $# -gt 0 ]]; do
     case $1 in
-        robot) NUM_ROBOTS="$2"; shift 2;;
+        robots) NUM_ROBOTS="$2"; shift 2;;
         ros_master) ROS_MASTER_IP="$2"; shift 2;;
         ros_ip) ROS_IP="$2"; shift 2;;
         *) echo "Unknown option: $1"; exit 1;;
