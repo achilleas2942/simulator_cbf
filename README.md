@@ -39,7 +39,7 @@
         ```
 
 #### Option 2 - Pull docker image locally and run docker container using docker pull and the run bash script file
-  - Pull the docker image from the [simulator](https://github.com/achilleas2942/simulator_cbf/pkgs/container/multiple_turtles_and_pelicans_simulator) GitHub packages
+  - Pull the docker image from the [simulator](https://github.com/achilleas2942/simulator_cbf/pkgs/container/multiple_turtles_and_pelicans_simulator) GitHub package
     ```
     docker pull ghcr.io/achilleas2942/multiple_turtles_and_pelicans_simulator:latest
     ```
